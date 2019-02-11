@@ -15,7 +15,7 @@ def sigmoid(x):
     """
 
     ### YOUR CODE HERE
-    raise NotImplementedError
+    s = 1 / (1 + np.exp(-x))
     ### END YOUR CODE
 
     return s
@@ -35,7 +35,7 @@ def sigmoid_grad(s):
     """
 
     ### YOUR CODE HERE
-    raise NotImplementedError
+    ds = s * (1 - s)
     ### END YOUR CODE
 
     return ds
