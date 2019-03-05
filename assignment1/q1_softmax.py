@@ -31,8 +31,10 @@ def softmax(x):
     if len(x.shape) > 1:
         # Matrix
         ### YOUR CODE HERE
-        normalized_exp = np.exp(x - np.max(x, 1).reshape((orig_shape[0], 1)))
-        x = normalized_exp / np.sum(normalized_exp, 1).reshape((orig_shape[0], 1))
+        # normalized_exp = np.exp(x - np.max(x, 1).reshape((orig_shape[0], 1)))
+        normalized_exp = np.exp(x - np.max(x, 1, keepdims=True))
+        # x = normalized_exp / np.sum(normalized_exp, 1).reshape((orig_shape[0], 1))
+        x = normalized_exp / np.sum(normalized_exp, 1, keepdims=True)
         
 #         # alternative
 #         transposed = x.T

@@ -7,6 +7,7 @@ from q1_softmax import softmax
 from q2_gradcheck import gradcheck_naive
 from q2_sigmoid import sigmoid, sigmoid_grad
 
+
 def normalizeRows(x):
     """ Row normalization function
 
@@ -15,7 +16,7 @@ def normalizeRows(x):
     """
 
     ### YOUR CODE HERE
-    raise NotImplementedError
+    x = x / np.sqrt(np.sum(x ** 2, 1, keepdims=True))
     ### END YOUR CODE
 
     return x
